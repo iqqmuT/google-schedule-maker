@@ -1,0 +1,50 @@
+<!-- Use a templated HTML printing scriptlet to import common stylesheet. -->
+<?!= HtmlService.createHtmlOutputFromFile('Stylesheet').getContent(); ?>
+
+<!-- Below is the HTML code that defines the dialog element structure. -->
+<div>
+  <p>Luo uuden kuukausiohjelman hakemalla tiedot lähdedokumenteista.</p>
+  <div class="block" id="dialog-elements">
+    <label for="dialog-template-select">
+      Malli:
+    </label>
+    <select id="dialog-template-select">
+      <option value="DOCUMENT-ID">Pysty</option>
+      <option value="DOCUMENT-ID">Vaaka</option>
+    </select>
+    <br>
+    <label for="dialog-year-select">
+      Vuosi ja kuukausi:
+    </label>
+    <select id="dialog-year-select">
+      <option value="2015">2015</option>
+      <option value="2016">2016</option>
+      <option value="2017">2017</option>
+      <option value="2018">2018</option>
+      <option value="2019">2019</option>
+    </select>
+    <select id="dialog-month-select">
+      <option value="1">tammikuu</option>
+      <option value="2">helmikuu</option>
+      <option value="3">maaliskuu</option>
+      <option value="4">huhtikuu</option>
+      <option value="5">toukokuu</option>
+      <option value="6">kesäkuu</option>
+      <option value="7">heinäkuu</option>
+      <option value="8">elokuu</option>
+      <option value="9">syyskuu</option>
+      <option value="10">lokakuu</option>
+      <option value="11">marraskuu</option>
+      <option value="12">joulukuu</option>
+    </select>
+  </div>
+  <div class="block" id="dialog-button-bar">
+      <button class="action" id="dialog-execute-button">Tee kuukausiohjelma</button>
+      <button id="dialog-cancel-button" onclick="google.script.host.close()">Sulje</button>
+  </div>
+  <div id="dialog-status"></div>
+</div>
+
+<!-- Use a templated HTML printing scriptlet to import JavaScript. -->
+<?!= HtmlService.createHtmlOutputFromFile('DialogJavaScript').getContent(); ?>
+
